@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pokemons</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>名前</th>
+      <th>説明文</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pokemons.each do |pokemon| %>
+      <tr>
+        <div class='pokemon'>
+        <td><%= pokemon.name %></td>
+        <td><%= pokemon.description %></td>
+        <td><%= link_to 'Show', pokemon %></td>
+        <td><%= link_to 'Edit', edit_pokemon_path(pokemon) %></td>
+        <td><%= link_to 'Destroy', pokemon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </div>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pokemon', new_pokemon_path %>
