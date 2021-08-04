@@ -1,0 +1,38 @@
+<h1>Hello,World</h1>
+<%# 複数のモデルを使うときはeachメソッドで処理each %>
+<% @book.each do |book| %>
+    <%= book.isbn %>
+    <%= book.title %>
+<% end %>
+<%# 色選択box %>
+<input id="color" type="color" value="#000000"><br>
+<%# 日付入力box %>
+<input id="day" type="date"><br>
+<%# 時刻入力box %>
+<input type="time"><br>
+<%# 日付時刻入力box(ローカル) %>
+<input type="datetime-local"><br>
+<%# 月入力box %>
+<input type="month"><br>
+<%# 週入力box %>
+<input type="week"><br>
+<%# メール入力box %>
+<%# <input type="email"><br> %>
+<%# 数値入力box %>
+<input type="number"><br>
+<%# スライダー %>
+<input type="range"><br>
+<p>ポケットモンスター</p>
+<%= select_tag 'publish',options_for_select(
+    {'ダイヤモンド・パール' => 1, 'プラチナ'=> 2, 'ブラックホワイト' => 3,'サン・ムーン'=> 4,'ソード・シールド'=> 5},)
+%>
+<%= tag(:br) %>
+<%# メールアドレスを送信 %>
+<%= mail_to 'practice@gmail.com' %>
+<%#= debug(@book) %>
+
+<%# findメソッドはrailsの検索機能の一つ %>
+<%# @book = Book.find(params[:id]) %>
+<%# has_many,belongs_to(従属する)  %>
+
+

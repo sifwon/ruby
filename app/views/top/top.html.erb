@@ -1,3 +1,9 @@
 <h1>こんにちは世界</h1>
-<%#=  %>
-<%# end %>
+<%
+=begin 
+@book.each do |book| %>
+    <%= book.isbn %>
+    <%= book.title %>
+<% 
+=end %>
+

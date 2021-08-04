@@ -1,5 +1,5 @@
 class TopController < ApplicationController
     def top 
-        #@book = Books.find(params[:id])
+        @book = Book.all
     end
 end
